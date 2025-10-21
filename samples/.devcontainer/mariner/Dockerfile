@@ -27,7 +27,7 @@ RUN tdnf install -y openssh-server nc \
 
 # Install PySpark in the base Conda environment
 ENV SPARK_VERSION=3.4.1
-RUN conda install -c conda-forge pyspark==$SPARK_VERSION
+RUN pip install pyspark==$SPARK_VERSION
 
 # Generate new host keys
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key && \
